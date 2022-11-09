@@ -20,16 +20,16 @@ int main()
       if(num == 1) {
          printf("No\n");
       } else{
-      for(j=2; j<= num/2; j++)
-      {
-
-         if( num%j==0)
+         for(j=2; j<= num/2; j++)
          {
-            c=1;
-            break;
-         }
 
-      }
+            if( num%j==0)
+            {
+               c=1;
+               break;
+            }
+
+         }
 
          if(c==0)
             printf("Yes\n");
