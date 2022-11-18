@@ -19,11 +19,12 @@ int main()
                 a[i] = temp;
             }
         }
+
     }
 
     for(i=0; i<N; i++)
     {
-        printf("%d ", a[i]);
+        printf("%d, ", a[i]);
     }
     return 0;
 }

@@ -1,39 +1,9 @@
-#include <stdio.h>
-
+#include<stdio.h>
 int main()
 {
-   int row, col, i, j;
-   printf("Provide row and col: ");
+    int array[2][3]= {{10,20,30},{40,50,60}},i=1,j=0;
+    array[i][j]=array[j][i];
+    printf("%d,%d",array[i][j],array[j+1][i+1]);
 
-   int a[row][col];
-   printf("Provide matrix value: ");
-
-   for(i=0; i<row; i++)
-   {
-      for(j=0; j<col; j++)
-      {
-         scanf("%d ", &a[i][j]);
-      }
-   }
-
-   int ans = 1;
-   int x = a[0][0];
-   if(row==col)
-   {
-      if(a[])
-      {
-
-         continue;
-      }
-      if(a[i][j] != 0)
-      {
-         ans = 0;
-      }
-   }
-   else
-   {
-      printf("Row & Col are not same");
-   }
-
-   return 0;
+    return 0;
 }

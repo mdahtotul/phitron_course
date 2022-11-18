@@ -31,10 +31,10 @@ int main()
 
          }
 
-         if(c==0)
-            printf("Yes\n");
-         else
+         if(c==1)
             printf("No\n");
+         else
+            printf("Yes\n");
 
       }
 
