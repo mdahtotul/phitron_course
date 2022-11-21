@@ -41,13 +41,15 @@ int main()
     e_sum = e_max1 + e_max2;
     o_sum = o_max1 + o_max2;
 
+    /*
     if (e_sum < e_max1 && e_max1 > o_max1)
         printf("%d", e_max1);
     else if (o_sum < o_max1 && o_max1 > e_max1)
         printf("%d", o_max1);
-    else if(e_sum > o_sum)
+    */
+    if(e_sum >= o_sum)
         printf("%d", e_sum);
-    else if (e_sum < o_sum)
+    else
         printf("%d", o_sum);
 
 
