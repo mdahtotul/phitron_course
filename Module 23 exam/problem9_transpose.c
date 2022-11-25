@@ -5,6 +5,7 @@ int main()
     int N=3, M=3, i, j;
 
     int a[N][M];
+    printf("Provide %dx%d matrix\n", N, M);
     for(i=0; i<N; i++)
     {
         for(j=0; j<M; j++)
