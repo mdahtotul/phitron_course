@@ -35,4 +35,5 @@ int two_factorial(int f1, int f2)
    int second = factorial(f2);
 
    int ratio = first / second;
+   return ratio;
 }
