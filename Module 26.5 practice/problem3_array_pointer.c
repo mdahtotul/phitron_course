@@ -11,7 +11,7 @@ int main()
       scanf("%d ", &a[i]);
    }
 
-   //int *p = &a[0];
+   int *p = &a[0];
    system("cls"); // to clean terminal previous writing
    printf("Print array using pointers : ");
    for(i=0; i<N; i++)
