@@ -17,8 +17,6 @@ int power_rec(int mult, int n, int m)
    if(m == 0)
       return mult;
    else
-   {
       return power_rec(mult*n, n, m-1);
-   }
 
 }
