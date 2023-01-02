@@ -30,6 +30,7 @@ public:
    {
       cout<<ID<<" "<<name<<" "<<age<<" "<<fathers_name<<" "<<mothers_name<<"\n";
    }
+   // operator overloading
    bool operator < (Student a)
    {
       return ID < a.ID;
