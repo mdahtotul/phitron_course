@@ -13,13 +13,23 @@ int main()
    for(int i=0; i<n; i++) // Time O(n)
    {
       bool sorted = true;
+      cout<<i+1<<" iteration \n";
       for(int j=0; j<n-1-i; j++)
       {
+         cout<<j+1<<" step \n";
+         for(int i=0; i<n; i++)
+            cout<<a[i]<<" ";
+
+         cout<<"\n";
          if(a[j]>a[j+1])
          {
             swap(a[j], a[j+1]);
             sorted = false;
          }
+         for(int i=0; i<n; i++)
+            cout<<a[i]<<" ";
+
+         cout<<"\n";
       }
       if(sorted) break;
    }
