@@ -59,9 +59,9 @@ void mergeSort( int arr[], int left, int right ) {
 int main() {
 
    int arr[] = {5,8,7,6,3};
-   int size = sizeof(arr) / sizeof(arr[0]);
-   mergeSort(arr, 0, size-1);
-   for(int i=0; i<5; i++)
+   int size = sizeof( arr ) / sizeof( arr[0] );
+   mergeSort( arr, 0, size-1 );
+   for( int i=0; i<5; i++ )
       cout<<arr[i]<<" ";
 
    cout<<"\n";
