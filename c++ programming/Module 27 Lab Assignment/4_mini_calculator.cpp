@@ -5,7 +5,7 @@ using namespace std;
 int getNum( char c ) {
    int value;
    value = c;
-   int val = int(value-'0');
+   int val = int( value-'0' );
    return val;
 }
 
@@ -69,7 +69,7 @@ int evaluation( string str ) {
          st2.pop();
          int num2 = st2.top() ;
          st2.pop();
-         st2.push(operation(num1, num2, ch));
+         st2.push( operation( num1, num2, ch ) );
       }
    }
 
@@ -109,6 +109,6 @@ int main() {
       st.pop();
    }
 
-   cout<<evaluation(ans)<<"\n";
+   cout<<evaluation( ans )<<"\n";
    return 0;
 }
