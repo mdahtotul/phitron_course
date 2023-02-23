@@ -40,7 +40,7 @@ void _merge( int arr[], int left, int mid, int right ) {
 }
 
 void mergeSort( int arr[], int left, int right ) {
-   if( left < right ) {
+   while( left < right ) {
       int len = left + right;
       int mid = len/2;
       mergeSort( arr, left, mid );
