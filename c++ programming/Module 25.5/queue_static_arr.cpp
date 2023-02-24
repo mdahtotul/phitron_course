@@ -23,9 +23,6 @@ class Queue {
          return;
       }
       r++;
-      if( r == mx_sz )
-         r = 0;
-
       arr[r] = val;
       sz++;
    }
