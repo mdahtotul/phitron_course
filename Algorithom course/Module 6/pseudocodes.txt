@@ -1,0 +1,21 @@
+void dfs(int node) {
+   cout<<node<<"\n";
+   visited[node] = 1;
+
+   for all adj_node of node:
+      if(visited[adj_node] == 0):
+         dfs(adj_node)
+}
+
+BFS(graph, source):
+
+- Initiate an array called "visited" and an empty queue "q"
+- mark visited[source] = 1 and q.push(source)
+- while the queue is not empty:
+   - head = q.front()
+   - q.pop()
+   - print the node "head"
+   - for all adjacent nodes of head:
+      - if visited[adj_node] == 0:
+         - visited[adj_node] = 1
+         - q.push(adj_node)
