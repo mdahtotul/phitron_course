@@ -23,7 +23,7 @@ int main() {
    vector<pair<int, int>>adj_list[nodes];
 
    // O(E)
-   // adj_list[0].push_back({1, 2});
+   // adj_list[0].push_back( {1, 2} );
    adj_list[0] = {{1, 2}};
    // adj_list[1].push_back( {2, 4} );
    adj_list[1] = {{2, 4}};
