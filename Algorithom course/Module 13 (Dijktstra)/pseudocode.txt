@@ -1,0 +1,29 @@
+// input -> a weighted graph and a source
+// output -> distance of all nodes from the source
+
+// Space complexity: O(n);
+// Time complexity: O(n) + O(n^2) + O(E); Final complexity: O(n^2);
+
+/*
+  Relax formula:
+  u ----> v
+  distance of u = d[u]; distance of v = d[v]; weight from u to v = c(u, v)
+
+  if(d[u] + c(u, v) < d[v]) :
+    d[v] = d[u] + c(u, v)
+*/
+
+
+-> create a distance array "d"; 
+-> initialize all values of "d" to infinity // SC - O(n)
+-> d[src] = 0 // TC - o(1)
+-> create a visited array and mark all nodes as unvisited // SC - O(n)
+
+-> for i=0 to n-1 : // TC - O(n)
+  --> loop over the nodes and pick the unvisited node with lowest d[node] // TC - O(n^2)
+  --> visited[node] = 1 // TC - O(1)
+  --> for all adj_node of node: // TC - O(E)
+    ---> if d[node] + c(node, adj_node) < d[adj_node]:
+        ----> d[adj_node] = d[node] + c(node, adj_node)
+
+-> output array "d"
