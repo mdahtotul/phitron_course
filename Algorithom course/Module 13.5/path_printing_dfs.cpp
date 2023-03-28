@@ -1,7 +1,9 @@
+// not working for Message Route - CSES Problem Set link: https://cses.fi/problemset/task/1667
 #include <bits/stdc++.h>
 using namespace std;
 
 void printPath(vector<int> stack) {
+  cout << stack.size() << endl;
   for(int i = 0; i < stack.size() - 1; i++) {
     cout << stack[i] << " -> ";
   }

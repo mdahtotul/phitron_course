@@ -1,3 +1,4 @@
+// not working for Message Route - CSES Problem Set link: https://cses.fi/problemset/task/1667
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -93,6 +94,7 @@ int main() {
   int root = 1;
   int dst = nodes;
 
+  // remember to change the root and destination node according to input
   printPath(adj_list, root, dst, nodes);
 
   return 0;
