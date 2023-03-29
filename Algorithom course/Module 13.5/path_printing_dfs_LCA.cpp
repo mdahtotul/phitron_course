@@ -111,6 +111,6 @@ Input:
 3 8
 3 5
 
-Output:
+Output: (root 4 and dst 7)
 4 -> 3 -> 2 -> 1 -> 7
 */
