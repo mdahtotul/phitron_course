@@ -1,5 +1,5 @@
 /*
-Problem: https://cses.fi/problemset/task/1193
+Problem: https://cses.fi/problemset/task/1192
 5 8
 ########
 #..#...#
