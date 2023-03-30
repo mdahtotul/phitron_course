@@ -54,3 +54,21 @@ int main() {
 
   return 0;
 }
+
+/*
+Input:
+4 3
+1 2
+2 3
+1 3
+Output:
+Cycle Exist
+
+Input:
+3 2
+1 2
+2 3
+Output:
+No cycle
+*/
+*/
