@@ -51,7 +51,7 @@
 -> initialize all values of "d" to infinity // SC - O(n)
 -> d[src] = 0 // TC - o(1)
 -> create a visited array and mark all nodes as unvisited // SC - O(n)
--> take an priority_queue "pq"
+-> take an reverse priority_queue "pq"
 -> pq.push({0, src})
 
 -> while(!pq.empty()) : // TC - O(n)
