@@ -2,12 +2,12 @@
 using namespace std;
 
 const int N = 1001;
-
 char maze[N][N], steps[N][N];
 int visited[N][N], level[N][N];
 int n, m;
 int dx[] = {1, -1, 0, 0};
 int dy[] = {0, 0, 1, -1};
+//          D  U  R  L (src --> dst)
 vector<char> path;
 
 bool is_valid(int x, int y) {
@@ -27,9 +27,12 @@ bool is_border_cell(int i, int j) {
     return false;
 }
 
+
 void printPath(pair<int, int> src, int x, int y) {
+  // 5
   int run = level[src.first][src.second] + 1;
   while(run--) {
+    // path.push_back(steps[x][y]);
     cout << steps[x][y] << "";
     if(steps[x][y] == 'R') {
       y++;
@@ -40,19 +43,22 @@ void printPath(pair<int, int> src, int x, int y) {
     } else if(steps[x][y] == 'D') {
       x++;
     }
+    // if(x == dst.first && y == dst.second) {
+    //   break;
+    // }
   }
 }
 
-bool bfs(pair<int, int> src, pair<int, int> dst){
+bool bfs(pair<int, int> dst) {
   queue<pair<int, int>> q;
   q.push(dst);
+
   visited[dst.first][dst.second] = 1;
   level[dst.first][dst.second] = 0;
 
   while(!q.empty()) {
     pair<int, int> head = q.front();
     q.pop();
-
     int row = head.first;
     int col = head.second;
     for (int i = 0; i < 4; i++){
@@ -68,7 +74,7 @@ bool bfs(pair<int, int> src, pair<int, int> dst){
         } else if(i == 0) {
           steps[x][y] = 'U';
         }
-
+        
         visited[x][y] = 1;
         level[x][y] = level[row][col] + 1;
         q.push({x, y});
@@ -79,7 +85,6 @@ bool bfs(pair<int, int> src, pair<int, int> dst){
       }
     }
   }
-
   return false;
 }
 
@@ -88,17 +93,23 @@ int main() {
 
   cin >> n >> m;
   pair<int, int> src, dst;
-  memset(level, -1, sizeof(level));
 
-  for (int i = 0; i < n; i++){
+  for(int i = 0; i < n; i++) {
     string str;
     cin >> str;
-    for (int j = 0; j < m; j++) {
+    for(int j = 0; j < m; j++) {
       maze[i][j] = str[j];
-      if(str[j] == 'A') {
+      if(maze[i][j] == 'A') {
         src = {i, j};
       }
     }
+  }
+
+  for (int i = 0; i < n; i++) { 
+    for (int j = 0; j < m; j++) {
+      cout << maze[i][j] << "\t";
+    }
+    cout << "\n";
   }
 
   bool src_found = false;
@@ -106,19 +117,17 @@ int main() {
   for (int i = 0; i < n; i++) { 
     for (int j = 0; j < m; j++) {
       if(is_valid(i, j) && is_border_cell(i, j) && !visited[i][j]) {
-        src_found = bfs(src, {i, j});
+        src_found = bfs({i, j});
       }
     }
   }
 
-  if(level[src.first][src.second] == -1)
-    cout << "NO\n";
-  else {
-    cout << "YES\n";
-    cout << level[src.first][src.second] << "\n";
-    printPath(src, src.first, src.second);
+  for (int i = 0; i < n; i++) { 
+    for (int j = 0; j < m; j++) {
+      cout << steps[i][j] << "\t";
+    }
+    cout << "\n";
   }
-  cout << "\n";
 
   return 0;
 }
