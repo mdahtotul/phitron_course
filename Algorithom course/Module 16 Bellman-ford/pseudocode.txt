@@ -1,0 +1,60 @@
+// Pseudocode: Bellman-Ford
+
+Input- A weighted directed graph & a src node (with no negative cycles)
+Output- Shortest path from src node to all other nodes
+
+/*
+max value of m = n^2;
+Time Complexity: O(VE) || O(n*m) || O(n^3)
+Space Complexity: O(V) || O(n)
+where V is the number of vertices and E is the number of edges in the graph.
+*/
+relax formula:
+dist[v] = min(dist[v], dist[u] + weight(u,v))
+*/
+
+-> Create a distance array dist[] and initialize all values as infinite.
+-> dist[src] = 0;
+
+-> for i=1 to n-1: O(n)
+  --> for all edge e(u, v, w): O(m)
+      --> if dist[u] + w < dist[v]:
+              dist[v] = dist[u] + w
+
+-> print the distance array "dist[]"
+
+
+
+
+
+
+
+// Pseudocode: Bellman-Ford to detect negative cycle
+
+Input- A weighted directed graph & a src node (with no negative cycles)
+Output- Shortest path from src node to all other nodes
+
+/*
+max value of m = n^2;
+Time Complexity: O(VE) || O(n*m) || O(n^3)
+Space Complexity: O(V) || O(n)
+where V is the number of vertices and E is the number of edges in the graph.
+*/
+relax formula:
+dist[v] = min(dist[v], dist[u] + weight(u,v))
+*/
+
+-> Create a distance array dist[] and initialize all values as infinite.
+-> dist[src] = 0;
+
+-> bool neg_cycle = false;
+
+-> for i=1 to n: O(n)
+  --> for all edge e(u, v, w): O(m)
+      --> if dist[u] + w < dist[v]:
+              dist[v] = dist[u] + w
+              if(i==n)
+                neg_cycle = true;
+
+-> print whether there is a negative cycle or not
+-> print the distance array "dist[]"
