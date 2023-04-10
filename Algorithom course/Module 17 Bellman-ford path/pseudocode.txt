@@ -1,0 +1,55 @@
+// Pseudocode: Bellman-Ford to detect negative cycle and path printing
+
+Input- A weighted directed graph & a src node (with no negative cycles)
+Output- Shortest path from src node to all other nodes
+
+/*
+max value of m = n^2;
+Time Complexity: O(VE) || O(n*m) || O(n^3)
+Space Complexity: O(V) || O(n)
+where V is the number of vertices and E is the number of edges in the graph.
+*/
+relax formula:
+dist[v] = min(dist[v], dist[u] + weight(u,v))
+*/
+
+-> Create a distance array dist[] and initialize all values as infinite.
+-> create a parent array
+-> dist[src] = 0;
+
+-> bool neg_cycle = false;
+
+-> for i=1 to n: O(n)
+  --> for all edge e(u, v, w): O(m)
+      --> if dist[u] + w < dist[v]:
+              - dist[v] = dist[u] + w
+              - parent[v] = u
+              - if(i==n)
+                  neg_cycle = true;
+                  last_updated_node = v;
+
+-> print whether there is a negative cycle or not
+
+-> if (!neg_cycle):
+  -> print the distance array "dist[]"
+  -> selected_node = destination_node;
+  -> declare a vector path
+  -> while(1):
+    - path.push_back(selected_node);
+    - if(selected_node == src) break;
+    - selected_node = parent[selected_node];
+  -> reverse the path vector
+  -> print the path vector
+else ;
+  -> print the negative cycle path
+  -> selected_node = last_updated_node;
+  -> for i=1 to n-1:
+    - selected_node = parent[selected_node];
+  -> first_node = selected_node
+  -> declare a vector "cycle"
+  -> while(1):
+    - cycle.push_back(selected_node);
+    - if(selected_node == first_node) break;
+    - selected_node = parent[selected_node];
+  -> reverse the cycle vector
+  -> print the cycle vector
