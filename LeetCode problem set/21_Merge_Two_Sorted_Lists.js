@@ -5,9 +5,9 @@ const mergeTwoLists = (list1, list2) => {
   if (!list2) return list1;
 
   const mergedList = [];
-  let idx1 = 0,
-    idx2 = 0,
-    idxT = 0;
+  let idx1 = 0;
+  let idx2 = 0;
+  let idxT = 0;
 
   while (list1.length && list2.length) {
     if (list1[idx1] <= list2[idx2]) {
