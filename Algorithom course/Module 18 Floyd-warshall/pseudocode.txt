@@ -1,0 +1,18 @@
+Input - A weighted graph as an adjacency matrix.
+Output - All pair shortest distance
+
+/*
+  Time complexity: O(V^2) + O(V*V*V) = O(V^3)
+  Space complexity: O(V^2)
+*/
+
+-> create a distance matrix dist[][] and where dist[i][j] = x where there is a direct edge from i to j with weight x. O(V^2)
+-> If there is no direct edge from i to j then dist[i][j] = INF.
+-> If i = j then dist[i][j] = 0.
+
+-> for all node "k" // O(V)
+  -> for all node "u" // O(V)
+    -> for all node "v" // O(V)
+      -> dist[u][v] = min(dist[u][v], dist[u][k] + dist[k][v]) // O(1)
+
+-> output all pair shortest distance in dist[][]
