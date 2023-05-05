@@ -3,10 +3,14 @@
 using namespace std;
 
 /*
-  - state: return the minimum number of perfect square numbers that sum to n;
+  - state: return the max of robbedMoney;
   - recurrence relation: 
-      robbedMoney(n) = 1 + robbedMoney(n- (i*i)) for all i from 1 to sqrt(n)
-  - base case: robbedMoney(0) -> return 0;
+      robbedMoney(nums, n) = max{
+                                  robbedMoney(nums, n-2) + nums[n],
+                                  robbedMoney(nums, n-1)
+                                }
+  - base case: n<0 -> return 0;
+               n==0 -> return nums[0]
 */
 
 class Solution {

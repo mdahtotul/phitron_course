@@ -57,9 +57,8 @@ public:
 int main() {
   ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
 
-  // vector<int> n = {2,3,2};
-  // vector<int> n = {1,2,3};
-  vector<int> n = {1,2,3,1};
+  vector<int> n = {2,3,2};
+  vector<int> n = {1,2,3};
   Solution s;
   cout << s.rob(n) << "\n";
 

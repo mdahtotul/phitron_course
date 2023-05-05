@@ -15,29 +15,21 @@ bool is_valid(int x, int y) {
   return (x >= 0 && x < n && y >= 0 && y < m && maze[x][y] != -1);
 }
 
-void bfs( pair<int, int> root) {
-  queue<pair<int, int>> q;
+void dfs( pair<int, int> root) {
+  int x = root.first, y = root.second;
   visited[root.first][root.second] = 1;
-  level[root.first][root.second] = 0;
-  q.push(root);
 
-  while (!q.empty()) {
-    pair<int, int> head = q.front();
-    q.pop();
+  for (int i = 0; i < 4; i++) {
+    int new_x = x + dx[i];
+    int new_y = y + dy[i];
+    if (maze[new_x][new_y] == 'B')
+      break;
 
-    int x = head.first, y = head.second;
-
-    for (int i = 0; i < 4; i++) {
-      int new_x = x + dx[i];
-      int new_y = y + dy[i];
-      if(maze[new_x][new_y] == 'B')
-        break;
-
-      if (is_valid(new_x, new_y) && visited[new_x][new_y] == 0) {
-        visited[new_x][new_y] = 1;
-        level[new_x][new_y] = level[x][y] + 1;
-        q.push({new_x, new_y});
-      }
+    if (is_valid(new_x, new_y) && visited[new_x][new_y] == 0)
+    {
+      visited[new_x][new_y] = 1;
+      level[new_x][new_y] = level[x][y] + 1;
+      dfs({new_x, new_y});
     }
   }
 }
@@ -65,8 +57,9 @@ int main() {
         dst = {i, j};
     }
   }
+  level[src.first][src.second] = 0;
+  dfs(src);
 
-  bfs(src);
 
   if(level[dst.first][dst.second] == -1)
     cout << "NO" << "\n";
