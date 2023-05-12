@@ -39,6 +39,14 @@ void dijkstra(int src){
   }
 }
 
+void printList(int len) {
+  for (int i = 0; i<len; i++) {
+    for (int j = 0; j < adj_list[i].size(); j++) {
+      cout<< "dst: " << adj_list[i][j].first << " node: " << adj_list[i][j].second << " vis: " << visited[adj_list[i][j].first] << " updated dist: " << dist[adj_list[i][j].first] << "\n";
+    }
+  }
+}
+
 void connectEdge(int u, int v, int w){
   adj_list[u].push_back({v, w});
   adj_list[v].push_back({u, w});
