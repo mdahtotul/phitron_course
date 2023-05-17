@@ -33,7 +33,7 @@ int main() {
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     
     Solution s;
-    vector<int> coins = {1, 3, 5};
+    vector<int> coins = {2, 3, 5};
     // vector<int> coins = {2};
     int amount = 8;
     cout << s.change(amount, coins) << "\n";
