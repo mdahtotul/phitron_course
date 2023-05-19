@@ -1,3 +1,10 @@
+/**
+ * @Conditions
+ * 1. You are located at the top-left corner of a [m x n] grid
+ * 2. You can only move either down or right at any point in time
+ * 3. You have to go to the bottom-right corner of the grid
+ * 4. How many possible unique paths are there?
+ */
 // brute force
 const gridTravel = (row, col) => {
   if (row < 1 || col < 1) return 0;

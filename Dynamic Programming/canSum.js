@@ -1,3 +1,11 @@
+/**
+ * @Conditions
+ * 1. Write a function `canSum(amount, coins)` that takes in a amount and an array of coins as arguments.
+ * 2. The function should return a boolean indicating whether or not it is possible to generate the amount using coins from the array.
+ * 3. You may use an element from the array as many times as needed.
+ * 4. You may assume that all input numbers are nonnegative.
+ */
+
 // brute force
 const canSum = (coins, amount) => {
   if (amount < 0) return false;
