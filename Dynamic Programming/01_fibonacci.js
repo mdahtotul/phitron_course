@@ -22,7 +22,7 @@ const fibMemo = (n, memo = {}) => {
 console.log(fibMemo(50));
 
 // tabulation
-const tibTab = (n, dp = {}) => {
+const fibTab = (n, dp = {}) => {
   dp[0] = 0;
   dp[1] = 1;
   dp[2] = 1;
@@ -34,7 +34,7 @@ const tibTab = (n, dp = {}) => {
   return dp[n];
 };
 
-console.log(tibTab(50));
+console.log(fibTab(50));
 
 /*
   Brute Force: O(2^n) time | O(n) space

@@ -1,6 +1,5 @@
 {
-  "workbench.colorTheme": "Andromeda Colorizer",
-  "C_Cpp.errorSquiggles": "Disabled",
+  "C_Cpp.errorSquiggles": "disabled",
   "files.associations": {
     "deque": "cpp",
     "string": "cpp",
@@ -88,5 +87,9 @@
     "typeinfo": "cpp",
     "valarray": "cpp",
     "variant": "cpp"
-  }
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "python.formatting.provider": "none"
 }
